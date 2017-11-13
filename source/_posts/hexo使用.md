@@ -1,9 +1,6 @@
 ---
 title: hexo使用
 date: 2017-11-13 14:18:30
-tags:
-- blog
-- hexo
 categories: tool
 ---
 

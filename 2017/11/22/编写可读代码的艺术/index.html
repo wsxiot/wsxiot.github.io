@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="算法思想 先将待排序表分割成若干个形如L[i,i+d,i+2d,…,i+kd]的特殊子表，分别进行直接插入排序，进行多次上述操作，当整个表已经呈基本有序时，在对全体表进行一次直接插入排序  算法流程 原数组：95, 45, 15, 78, 84, 51, 24, 12 第一次排序增量为8/2=4，排序后：84, 45,">
+<meta name="description" content="第一章总结 代码应当易于理解 代码的写法应当使别人理解它所需的时间最小化 for(Node *node=list-&amp;gt;head; node!=NULL; node=node-&amp;gt;next)第二章总结 本章的唯一的主题是：把信息塞入名字中。这句话的含意是，读者仅通过读到名字就可以获得大量信息。 使">
 <meta property="og:type" content="article">
-<meta property="og:title" content="希尔排序">
-<meta property="og:url" content="http://blog.wsxiot.cn/2017/11/13/希尔排序/index.html">
+<meta property="og:title" content="编写可读代码的艺术">
+<meta property="og:url" content="http://blog.wsxiot.cn/2017/11/22/编写可读代码的艺术/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="算法思想 先将待排序表分割成若干个形如L[i,i+d,i+2d,…,i+kd]的特殊子表，分别进行直接插入排序，进行多次上述操作，当整个表已经呈基本有序时，在对全体表进行一次直接插入排序  算法流程 原数组：95, 45, 15, 78, 84, 51, 24, 12 第一次排序增量为8/2=4，排序后：84, 45, 15, 12, 95, 51, 24, 78 (95,84),(45,51),">
-<meta property="og:updated_time" content="2017-11-20T09:08:52.802Z">
+<meta property="og:description" content="第一章总结 代码应当易于理解 代码的写法应当使别人理解它所需的时间最小化 for(Node *node=list-&amp;gt;head; node!=NULL; node=node-&amp;gt;next)第二章总结 本章的唯一的主题是：把信息塞入名字中。这句话的含意是，读者仅通过读到名字就可以获得大量信息。 使用专业的名词——例如，不用Get，而用Fetch或者Download可能会更好，这有上下文决定。">
+<meta property="og:updated_time" content="2017-11-22T03:50:34.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="希尔排序">
-<meta name="twitter:description" content="算法思想 先将待排序表分割成若干个形如L[i,i+d,i+2d,…,i+kd]的特殊子表，分别进行直接插入排序，进行多次上述操作，当整个表已经呈基本有序时，在对全体表进行一次直接插入排序  算法流程 原数组：95, 45, 15, 78, 84, 51, 24, 12 第一次排序增量为8/2=4，排序后：84, 45, 15, 12, 95, 51, 24, 78 (95,84),(45,51),">
+<meta name="twitter:title" content="编写可读代码的艺术">
+<meta name="twitter:description" content="第一章总结 代码应当易于理解 代码的写法应当使别人理解它所需的时间最小化 for(Node *node=list-&amp;gt;head; node!=NULL; node=node-&amp;gt;next)第二章总结 本章的唯一的主题是：把信息塞入名字中。这句话的含意是，读者仅通过读到名字就可以获得大量信息。 使用专业的名词——例如，不用Get，而用Fetch或者Download可能会更好，这有上下文决定。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>希尔排序 | blog</title>
+<title>编写可读代码的艺术 | blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -207,11 +207,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-希尔排序" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-编写可读代码的艺术" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/11/13/希尔排序/" class="article-date">
-      <time datetime="2017-11-13T06:57:45.000Z" itemprop="datePublished">2017-11-13</time>
+      <a href="/2017/11/22/编写可读代码的艺术/" class="article-date">
+      <time datetime="2017-11-22T03:49:17.000Z" itemprop="datePublished">2017-11-22</time>
 </a>
 
 
@@ -226,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      希尔排序
+      编写可读代码的艺术
     </h1>
   
 
@@ -235,7 +235,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+    <a class="article-category-link" href="/categories/tool/">tool</a>
     </div>
 
 
@@ -247,24 +247,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h4><ul>
-<li>先将待排序表分割成若干个形如L[i,i+d,i+2d,…,i+kd]的特殊子表，分别进行直接插入排序，进行多次上述操作，当整个表已经呈基本有序时，在对全体表进行一次直接插入排序</li>
-</ul>
-<h4 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h4><ul>
-<li>原数组：95, 45, 15, 78, 84, 51, 24, 12</li>
-<li>第一次排序增量为8/2=4，排序后：84, 45, 15, 12, 95, 51, 24, 78<ul>
-<li>(95,84),(45,51),(15,24),(78,12)</li>
-</ul>
-</li>
-<li>第二次排序增量为4/2=2，排序后：15, 12, 51, 24, 84, 45, 95, 78<ul>
-<li>(84,15,95,24),(45,12,51,78)</li>
-</ul>
-</li>
-<li>第三次排序增量为2/2=1，即全体元素直接插入排序，排序后：12, 15, 24, 45, 51, 78, 84, 95</li>
-</ul>
-<h4 id="算法分析："><a href="#算法分析：" class="headerlink" title="算法分析："></a>算法分析：</h4><ul>
-<li>空间复杂度O(l)</li>
-<li>不是稳定的排序算法</li>
+        <h4 id="第一章总结"><a href="#第一章总结" class="headerlink" title="第一章总结"></a>第一章总结</h4><ul>
+<li>代码应当易于理解</li>
+<li>代码的写法应当使别人理解它所需的时间最小化</li>
+<li><code>for(Node *node=list-&gt;head; node!=NULL; node=node-&gt;next)</code><h4 id="第二章总结"><a href="#第二章总结" class="headerlink" title="第二章总结"></a>第二章总结</h4></li>
+<li>本章的唯一的主题是：把信息塞入名字中。这句话的含意是，读者仅通过读到名字就可以获得大量信息。</li>
+<li>使用专业的名词——例如，不用Get，而用Fetch或者Download可能会更好，这有上下文决定。</li>
+<li>避免使用空泛的名字——像tmp和retval，除非使用它们有特殊的理由。</li>
+<li>使用具体的名字来更细致地描述事物——ServerCanStart()这个名字就比CanLisrenOnPort()更不清楚。</li>
+<li>给变量名带上重要的细节——例如，在值为毫秒的变量后面加上_ms，或者在还需要转义的，未处理的变量前面加上raw_。</li>
+<li>为作用域更大的名字采用更长的名字——不要用让人费解的一个或两个字母的名字来命名在几屏之间都可见的变量。对于只存在于几行之间的变量用短一点的名字更好。</li>
+<li>有目的地使用大小写，下划线等——例如，你可以在类成员和局部变量后面加上”_”来区分它们。</li>
 </ul>
 
       
@@ -274,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/11/13/希尔排序/">希尔排序</a></p>
+        <p><span>本文标题:</span><a href="/2017/11/22/编写可读代码的艺术/">编写可读代码的艺术</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">wsxiot</a></p>
-        <p><span>发布时间:</span>2017-11-13, 14:57:45</p>
-        <p><span>最后更新:</span>2017-11-20, 17:08:52</p>
+        <p><span>发布时间:</span>2017-11-22, 11:49:17</p>
+        <p><span>最后更新:</span>2017-11-22, 11:50:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/11/13/希尔排序/" title="希尔排序">http://blog.wsxiot.cn/2017/11/13/希尔排序/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.wsxiot.cn/2017/11/13/希尔排序/　　作者: wsxiot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/22/编写可读代码的艺术/" title="编写可读代码的艺术">http://blog.wsxiot.cn/2017/11/22/编写可读代码的艺术/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.wsxiot.cn/2017/11/22/编写可读代码的艺术/　　作者: wsxiot" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -292,16 +285,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/11/13/冒泡排序/">
-                    冒泡排序
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/11/13/简单选择排序/">
-                    简单选择排序
+                <a href="/2017/11/22/总结/">
+                    总结
                 </a>
             </div>
         
@@ -313,7 +300,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法思想"><span class="toc-number">1.</span> <span class="toc-text">算法思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法流程"><span class="toc-number">2.</span> <span class="toc-text">算法流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#算法分析："><span class="toc-number">3.</span> <span class="toc-text">算法分析：</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一章总结"><span class="toc-number">1.</span> <span class="toc-text">第一章总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二章总结"><span class="toc-number">2.</span> <span class="toc-text">第二章总结</span></a></li></ol>
         
     </div>
     <style>
@@ -349,7 +336,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"希尔排序　| blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"编写可读代码的艺术　| blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -369,15 +356,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/11/13/冒泡排序/" title="上一篇: 冒泡排序">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/11/13/简单选择排序/" title="下一篇: 简单选择排序">
+            <a href="/2017/11/22/总结/" title="下一篇: 总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
